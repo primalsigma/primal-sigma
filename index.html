@@ -2,173 +2,254 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Primal Sigma</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
-    body {
-      background: #808080;
-      color: #ffffff;
-      font-family: Inter, Arial, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+    * {
+      box-sizing: border-box;
       margin: 0;
-      text-align: center;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      background: #0a0a0a;
+      color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      padding: 40px 16px;
     }
 
     .container {
       max-width: 720px;
-      padding: 40px;
+      width: 100%;
     }
 
-    .logo {
-      width: 220px;
-      margin-bottom: 32px;
+    .top-bar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 24px;
+    }
+
+    .lang-btn {
+      background: none;
+      border: 1px solid #444;
+      color: #ccc;
+      padding: 6px 12px;
+      margin-left: 8px;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    .lang-btn.active {
+      border-color: #fff;
+      color: #fff;
     }
 
     h1 {
       font-size: 42px;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
+      line-height: 1.1;
     }
 
     p {
       font-size: 18px;
-      opacity: 0.9;
-      margin-bottom: 28px;
+      color: #cfcfcf;
+      margin-bottom: 24px;
+      line-height: 1.6;
     }
 
-    .plan {
-      border: 1px solid #fff;
-      padding: 20px;
-      margin-bottom: 20px;
+    .section {
+      margin-top: 48px;
     }
 
-    .plan h2 {
-      margin-bottom: 8px;
+    .card {
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .card h3 {
       font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .card ul {
+      list-style: none;
+    }
+
+    .card ul li {
+      margin-bottom: 10px;
+      color: #dcdcdc;
     }
 
     .price {
-      font-weight: 700;
-      margin: 12px 0;
+      font-size: 32px;
+      font-weight: bold;
+      margin: 16px 0;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 24px;
-      border: 1px solid #ffffff;
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 600;
-      margin-top: 10px;
-    }
-
-    .btn:hover {
+      padding: 14px 22px;
       background: #ffffff;
-      color: #000000;
-    }
-
-    .lang-toggle {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
-
-    .lang-toggle button {
-      background: transparent;
-      border: 1px solid #fff;
-      color: #fff;
-      padding: 6px 10px;
-      margin-left: 6px;
-      cursor: pointer;
-      font-weight: 600;
-    }
-
-    .lang-toggle button:hover {
-      background: #fff;
       color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 10px;
+      margin-top: 8px;
+    }
+
+    .note {
+      font-size: 14px;
+      color: #999;
+      margin-top: 12px;
+    }
+
+    footer {
+      margin-top: 64px;
+      text-align: center;
+      color: #777;
+      font-size: 14px;
     }
   </style>
 </head>
 
 <body>
-
-  <!-- Language Toggle -->
-  <div class="lang-toggle">
-    <button onclick="setLanguage('en')">EN</button>
-    <button onclick="setLanguage('pt')">PT</button>
-  </div>
-
   <div class="container">
 
-    <!-- LOGO -->
-    <img src="assets/logo.png" alt="Primal Sigma Logo" class="logo" />
+    <!-- Language Switch -->
+    <div class="top-bar">
+      <button class="lang-btn active" onclick="setLang('en')" id="btn-en">EN</button>
+      <button class="lang-btn" onclick="setLang('pt')" id="btn-pt">PT</button>
+    </div>
 
-    <!-- ENGLISH -->
-    <div class="content en">
-      <h1>Primal Sigma</h1>
-      <p>Execution system for builders and operators.</p>
+    <!-- HERO -->
+    <h1 id="title">
+      Execution over noise.
+    </h1>
 
-      <div class="plan">
-        <h2>PREMIUM — Advanced Execution</h2>
-        <p>For operators increasing output under pressure.</p>
-        <div class="price">€149 / month</div>
-        <a class="btn" href="STRIPE_LINK_PREMIUM" target="_blank">
-          Subscribe
-        </a>
+    <p id="subtitle">
+      Primal Sigma is a high-performance execution system for builders who care about results, not opinions.
+    </p>
+
+    <!-- SECTION -->
+    <div class="section">
+      <div class="card">
+        <h3 id="who-title">Who this is for</h3>
+        <ul id="who-list">
+          <li>• Builders focused on execution</li>
+          <li>• People who want monetization, not engagement</li>
+          <li>• Operators tired of public playbooks</li>
+          <li>• Individuals who move fast and act alone</li>
+        </ul>
       </div>
 
-      <div class="plan">
-        <h2>ELITE — Operational Excellence</h2>
-        <p>For founders and high-level operators.</p>
-        <div class="price">€349 / month</div>
-        <a class="btn" href="STRIPE_LINK_ELITE" target="_blank">
-          Apply & Subscribe
-        </a>
+      <div class="card">
+        <h3 id="what-title">What you get</h3>
+        <ul id="what-list">
+          <li>• Execution framework used to reach 5M impressions</li>
+          <li>• Monetization logic (not theory)</li>
+          <li>• Positioning systems for X</li>
+          <li>• Private access — no public explanations</li>
+        </ul>
       </div>
     </div>
 
-    <!-- PORTUGUESE -->
-    <div class="content pt" style="display:none;">
-      <h1>Primal Sigma</h1>
-      <p>Sistema de execução para builders e operadores.</p>
-
-      <div class="plan">
-        <h2>PREMIUM — Execução Avançada</h2>
-        <p>Para operadores que aumentam output sob pressão.</p>
-        <div class="price">€149 / mês</div>
-        <a class="btn" href="STRIPE_LINK_PREMIUM" target="_blank">
-          Subscrever
+    <!-- PRICING -->
+    <div class="section">
+      <div class="card">
+        <h3 id="plan-title">Basic Access</h3>
+        <div class="price">€64</div>
+        <a
+          href="https://buy.stripe.com/YOUR_STRIPE_LINK"
+          class="btn"
+          id="cta-btn"
+        >
+          Join Primal Sigma
         </a>
-      </div>
-
-      <div class="plan">
-        <h2>ELITE — Excelência Operacional</h2>
-        <p>Para founders e operadores de alto nível.</p>
-        <div class="price">€349 / mês</div>
-        <a class="btn" href="STRIPE_LINK_ELITE" target="_blank">
-          Candidatar-se
-        </a>
+        <div class="note" id="note">
+          Access is granted automatically after payment.
+        </div>
       </div>
     </div>
+
+    <footer>
+      © Primal Sigma — execution only
+    </footer>
 
   </div>
 
-  <!-- LANGUAGE SCRIPT -->
+  <!-- Language Script -->
   <script>
-    function setLanguage(lang) {
-      document.querySelectorAll('.content').forEach(el => {
-        el.style.display = 'none';
-      });
-      document.querySelector('.' + lang).style.display = 'block';
-      localStorage.setItem('lang', lang);
-    }
+    const content = {
+      en: {
+        title: "Execution over noise.",
+        subtitle:
+          "Primal Sigma is a high-performance execution system for builders who care about results, not opinions.",
+        whoTitle: "Who this is for",
+        whoList: [
+          "• Builders focused on execution",
+          "• People who want monetization, not engagement",
+          "• Operators tired of public playbooks",
+          "• Individuals who move fast and act alone"
+        ],
+        whatTitle: "What you get",
+        whatList: [
+          "• Execution framework used to reach 5M impressions",
+          "• Monetization logic (not theory)",
+          "• Positioning systems for X",
+          "• Private access — no public explanations"
+        ],
+        planTitle: "Basic Access",
+        cta: "Join Primal Sigma",
+        note: "Access is granted automatically after payment."
+      },
+      pt: {
+        title: "Execução acima do ruído.",
+        subtitle:
+          "Primal Sigma é um sistema de execução de alta performance para builders que querem resultados, não opiniões.",
+        whoTitle: "Para quem é",
+        whoList: [
+          "• Builders focados em execução",
+          "• Pessoas que querem monetização, não engagement",
+          "• Operadores cansados de playbooks públicos",
+          "• Indivíduos que executam rápido e sozinhos"
+        ],
+        whatTitle: "O que recebes",
+        whatList: [
+          "• Framework de execução usado para atingir 5M impressões",
+          "• Lógica real de monetização",
+          "• Sistemas de posicionamento no X",
+          "• Acesso privado — sem explicações públicas"
+        ],
+        planTitle: "Acesso Básico",
+        cta: "Entrar na Primal Sigma",
+        note: "O acesso é concedido automaticamente após o pagamento."
+      }
+    };
 
-    const savedLang = localStorage.getItem('lang');
-    const browserLang = navigator.language.startsWith('pt') ? 'pt' : 'en';
-    setLanguage(savedLang || browserLang);
+    function setLang(lang) {
+      document.getElementById("btn-en").classList.remove("active");
+      document.getElementById("btn-pt").classList.remove("active");
+      document.getElementById(`btn-${lang}`).classList.add("active");
+
+      document.getElementById("title").innerText = content[lang].title;
+      document.getElementById("subtitle").innerText = content[lang].subtitle;
+      document.getElementById("who-title").innerText = content[lang].whoTitle;
+      document.getElementById("what-title").innerText = content[lang].whatTitle;
+      document.getElementById("plan-title").innerText = content[lang].planTitle;
+      document.getElementById("cta-btn").innerText = content[lang].cta;
+      document.getElementById("note").innerText = content[lang].note;
+
+      const whoList = document.getElementById("who-list");
+      whoList.innerHTML = content[lang].whoList.map(i => `<li>${i}</li>`).join("");
+
+      const whatList = document.getElementById("what-list");
+      whatList.innerHTML = content[lang].whatList.map(i => `<li>${i}</li>`).join("");
+    }
   </script>
 
 </body>
