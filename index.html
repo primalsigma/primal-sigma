@@ -69,6 +69,18 @@
       border-radius: 12px;
       padding: 24px;
       margin-bottom: 24px;
+      transition: background 0.3s ease;
+    }
+
+    .pt-highlight {
+      background: #808080;
+      color: #000;
+    }
+
+    .pt-highlight p,
+    .pt-highlight li,
+    .pt-highlight h3 {
+      color: #000;
     }
 
     .card h3 {
@@ -118,173 +130,143 @@
 </head>
 
 <body>
-  <div class="container">
+<div class="container">
 
-    <!-- Language Switch -->
-    <div class="top-bar">
-      <button class="lang-btn active" onclick="setLang('en')" id="btn-en">EN</button>
-      <button class="lang-btn" onclick="setLang('pt')" id="btn-pt">PT</button>
-    </div>
-
-    <!-- HERO -->
-    <h1 id="title">
-      Execution over noise.
-    </h1>
-
-    <p id="subtitle">
-      Primal Sigma is a high-performance execution system for builders who care about results, not opinions.
-    </p>
-
-    <!-- SECTION -->
-    <div class="section">
-      <div class="card">
-        <h3 id="who-title">Who this is for</h3>
-        <ul id="who-list">
-          <li>• Builders focused on execution</li>
-          <li>• People who want monetization, not engagement</li>
-          <li>• Operators tired of public playbooks</li>
-          <li>• Individuals who move fast and act alone</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3 id="what-title">What you get</h3>
-        <ul id="what-list">
-          <li>• Execution framework used to reach 5M impressions</li>
-          <li>• Monetization logic (not theory)</li>
-          <li>• Positioning systems for X</li>
-          <li>• Private access — no public explanations</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- PRICING -->
-    <div class="section">
-      <div class="card">
-        <h3 id="plan-title">Basic Access</h3>
-        <div class="price">€64</div>
-        <a
-          href="https://buy.stripe.com/5kQ5kC3Yv2dxgHVeey9sk03"
-          class="btn"
-          id="cta-btn"
-        >
-          Subscribe
-        </a>
-        <div class="note" id="note">
-          Access is granted automatically after payment.
-        </div>
-      </div>
-    </div>
-
-<div class="section">
-      <div class="card">
-        <h3 id="plan-title">Premium Access</h3>
-        <div class="price">€149</div>
-        <a
-          href="https://buy.stripe.com/5kQ8wObqX05p1N18Ue9sk02"
-          class="btn"
-          id="cta-btn"
-        >
-          Subscribe
-        </a>
-        <div class="note" id="note">
-          Access is granted automatically after payment.
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="card">
-        <h3 id="plan-title">Elite Access</h3>
-        <div class="price">€149</div>
-        <a
-          href="https://buy.stripe.com/9B6fZg1Qn8BV8bp4DY9sk04"
-          class="btn"
-          id="cta-btn"
-        >
-          Subscribe
-        </a>
-        <div class="note" id="note">
-          Access is granted automatically after payment.
-        </div>
-      </div>
-    </div>
-    
-    <footer>
-      Primal Sigma®
-    </footer>
-
+  <!-- Language -->
+  <div class="top-bar">
+    <button class="lang-btn active" onclick="setLang('en')" id="btn-en">EN</button>
+    <button class="lang-btn" onclick="setLang('pt')" id="btn-pt">PT</button>
   </div>
 
-  <!-- Language Script -->
-  <script>
-    const content = {
-      en: {
-        title: "Execution over noise.",
-        subtitle:
-          "Primal Sigma is a high-performance execution system for builders who care about results, not opinions.",
-        whoTitle: "Who this is for",
-        whoList: [
-          "• Builders focused on execution",
-          "• People who want monetization, not engagement",
-          "• Operators tired of public playbooks",
-          "• Individuals who move fast and act alone"
-        ],
-        whatTitle: "What you get",
-        whatList: [
-          "• Execution framework used to reach 5M impressions",
-          "• Monetization logic (not theory)",
-          "• Positioning systems for X",
-          "• Private access — no public explanations"
-        ],
-        planTitle: "Basic Access",
-        cta: "Join Primal Sigma",
-        note: "Access is granted automatically after payment."
-      },
-      pt: {
-        title: "Execução acima do ruído.",
-        subtitle:
-          "Primal Sigma é um sistema de execução de alta performance para builders que querem resultados, não opiniões.",
-        whoTitle: "Para quem é",
-        whoList: [
-          "• Builders focados em execução",
-          "• Pessoas que querem monetização, não engagement",
-          "• Operadores cansados de playbooks públicos",
-          "• Indivíduos que executam rápido e sozinhos"
-        ],
-        whatTitle: "O que recebes",
-        whatList: [
-          "• Framework de execução usado para atingir 5M impressões",
-          "• Lógica real de monetização",
-          "• Sistemas de posicionamento no X",
-          "• Acesso privado — sem explicações públicas"
-        ],
-        planTitle: "Acesso Básico",
-        cta: "Entrar na Primal Sigma",
-        note: "O acesso é concedido automaticamente após o pagamento."
-      }
-    };
+  <!-- HERO -->
+  <h1 id="title">Execution over noise.</h1>
+  <p id="subtitle">
+    Primal Sigma is a high-performance execution system for builders who care about results, not opinions.
+  </p>
 
-    function setLang(lang) {
-      document.getElementById("btn-en").classList.remove("active");
-      document.getElementById("btn-pt").classList.remove("active");
-      document.getElementById(`btn-${lang}`).classList.add("active");
+  <!-- INFO -->
+  <div class="section">
+    <div class="card">
+      <h3 id="who-title">Who this is for</h3>
+      <ul id="who-list"></ul>
+    </div>
 
-      document.getElementById("title").innerText = content[lang].title;
-      document.getElementById("subtitle").innerText = content[lang].subtitle;
-      document.getElementById("who-title").innerText = content[lang].whoTitle;
-      document.getElementById("what-title").innerText = content[lang].whatTitle;
-      document.getElementById("plan-title").innerText = content[lang].planTitle;
-      document.getElementById("cta-btn").innerText = content[lang].cta;
-      document.getElementById("note").innerText = content[lang].note;
+    <div class="card">
+      <h3 id="what-title">What you get</h3>
+      <ul id="what-list"></ul>
+    </div>
+  </div>
 
-      const whoList = document.getElementById("who-list");
-      whoList.innerHTML = content[lang].whoList.map(i => `<li>${i}</li>`).join("");
+  <!-- PRICING -->
+  <div class="section">
+    <div class="card" id="basic-card">
+      <h3 id="basic-title">Basic Access</h3>
+      <div class="price">€64</div>
+      <a href="https://buy.stripe.com/5kQ5kC3Yv2dxgHVeey9sk03" class="btn" id="basic-cta">Subscribe</a>
+      <div class="note" id="basic-note"></div>
+    </div>
 
-      const whatList = document.getElementById("what-list");
-      whatList.innerHTML = content[lang].whatList.map(i => `<li>${i}</li>`).join("");
-    }
-  </script>
+    <div class="card" id="premium-card">
+      <h3 id="premium-title">Premium Access</h3>
+      <div class="price">€149</div>
+      <a href="https://buy.stripe.com/5kQ8wObqX05p1N18Ue9sk02" class="btn" id="premium-cta">Subscribe</a>
+      <div class="note" id="premium-note"></div>
+    </div>
+
+    <div class="card" id="elite-card">
+      <h3 id="elite-title">Elite Access</h3>
+      <div class="price">€349</div>
+      <a href="https://buy.stripe.com/9B6fZg1Qn8BV8bp4DY9sk04" class="btn" id="elite-cta">Subscribe</a>
+      <div class="note" id="elite-note"></div>
+    </div>
+  </div>
+
+  <footer>Primal Sigma®</footer>
+</div>
+
+<script>
+const content = {
+  en: {
+    title: "Execution over noise.",
+    subtitle: "Primal Sigma is a high-performance execution system for builders who care about results, not opinions.",
+    whoTitle: "Who this is for",
+    whoList: [
+      "• Builders focused on execution",
+      "• People who want monetization, not engagement",
+      "• Operators tired of public playbooks",
+      "• Individuals who move fast and act alone"
+    ],
+    whatTitle: "What you get",
+    whatList: [
+      "• Execution framework used to reach 5M impressions",
+      "• Monetization logic (not theory)",
+      "• Positioning systems for X",
+      "• Private access — no public explanations"
+    ],
+    plans: {
+      basic: "Basic Access",
+      premium: "Premium Access",
+      elite: "Elite Access"
+    },
+    cta: "Subscribe",
+    note: "Access is granted automatically after payment."
+  },
+  pt: {
+    title: "Execução acima do ruído.",
+    subtitle: "Primal Sigma é um sistema de execução de alta performance para builders que querem resultados, não opiniões.",
+    whoTitle: "Para quem é",
+    whoList: [
+      "• Builders focados em execução",
+      "• Pessoas que querem monetização, não engagement",
+      "• Operadores cansados de playbooks públicos",
+      "• Indivíduos que executam rápido e sozinhos"
+    ],
+    whatTitle: "O que recebes",
+    whatList: [
+      "• Framework de execução usado para atingir 5M impressões",
+      "• Lógica real de monetização",
+      "• Sistemas de posicionamento no X",
+      "• Acesso privado — sem explicações públicas"
+    ],
+    plans: {
+      basic: "Acesso Básico",
+      premium: "Acesso Premium",
+      elite: "Acesso Elite"
+    },
+    cta: "Entrar na Primal Sigma",
+    note: "O acesso é concedido automaticamente após o pagamento."
+  }
+};
+
+function setLang(lang) {
+  document.getElementById("btn-en").classList.remove("active");
+  document.getElementById("btn-pt").classList.remove("active");
+  document.getElementById(`btn-${lang}`).classList.add("active");
+
+  document.getElementById("title").innerText = content[lang].title;
+  document.getElementById("subtitle").innerText = content[lang].subtitle;
+  document.getElementById("who-title").innerText = content[lang].whoTitle;
+  document.getElementById("what-title").innerText = content[lang].whatTitle;
+
+  document.getElementById("who-list").innerHTML =
+    content[lang].whoList.map(i => `<li>${i}</li>`).join("");
+
+  document.getElementById("what-list").innerHTML =
+    content[lang].whatList.map(i => `<li>${i}</li>`).join("");
+
+  document.getElementById("basic-title").innerText = content[lang].plans.basic;
+  document.getElementById("premium-title").innerText = content[lang].plans.premium;
+  document.getElementById("elite-title").innerText = content[lang].plans.elite;
+
+  document.querySelectorAll(".note").forEach(n => n.innerText = content[lang].note);
+  document.querySelectorAll(".btn").forEach(b => b.innerText = content[lang].cta);
+
+  document.getElementById("premium-card").classList.toggle("pt-highlight", lang === "pt");
+  document.getElementById("elite-card").classList.toggle("pt-highlight", lang === "pt");
+}
+
+setLang("en");
+</script>
 
 </body>
 </html>
