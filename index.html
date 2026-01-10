@@ -76,12 +76,12 @@
     }
 
     .card ul {
-      list-style: none;
+      list-style: disc inside;
       margin-bottom: 16px;
     }
 
     .card ul li {
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     .price {
@@ -116,13 +116,24 @@
     .plans-container {
       display: flex;
       justify-content: space-between;
-      gap: 16px;
+      gap: 24px; /* aumenta espaçamento entre as caixas */
       flex-wrap: wrap;
     }
 
     .plan {
       flex: 1;
-      min-width: 220px;
+      min-width: 250px;
+    }
+
+    .plan h4 {
+      margin-top: 12px;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .plan p {
+      margin-bottom: 8px;
+      font-size: 16px;
     }
 
     @media (max-width: 768px) {
@@ -166,24 +177,50 @@
         <div class="plan">
           <h3 id="basic-title">Basic Access</h3>
           <div class="price">€64</div>
+          <p><strong>For those building consistency</strong></p>
+          <p><strong>Includes:</strong></p>
+          <ul>
+            <li>Access to Primal Sigma system & community</li>
+            <li>Basic execution rules across all 5 pillars</li>
+            <li>Daily check‑in structure</li>
+            <li>Monthly review & correction</li>
+          </ul>
+          <p><strong>Focus:</strong> Discipline, Structure, Consistency</p>
           <a href="https://buy.stripe.com/5kQ5kC3Yv2dxgHVeey9sk03" class="btn" id="basic-cta">Subscribe</a>
-          <div class="note" id="basic-note"></div>
         </div>
 
         <!-- Premium -->
         <div class="plan">
           <h3 id="premium-title">Premium Access</h3>
           <div class="price">€149</div>
+          <p><strong>For operators increasing output under pressure</strong></p>
+          <p><strong>Includes:</strong></p>
+          <ul>
+            <li>Everything in Basic</li>
+            <li>Advanced execution rules</li>
+            <li>Weekly planning & alignment</li>
+            <li>Weekly direct feedback</li>
+            <li>Higher accountability standards</li>
+          </ul>
+          <p><strong>Focus:</strong> Output, Focus, Correction</p>
           <a href="https://buy.stripe.com/5kQ8wObqX05p1N18Ue9sk02" class="btn" id="premium-cta">Subscribe</a>
-          <div class="note" id="premium-note"></div>
         </div>
 
         <!-- Elite -->
         <div class="plan">
           <h3 id="elite-title">Elite Access</h3>
           <div class="price">€349</div>
+          <p><strong>For founders and high‑level operators</strong></p>
+          <p><strong>Includes:</strong></p>
+          <ul>
+            <li>Everything in Premium</li>
+            <li>Daily execution oversight</li>
+            <li>Real‑time correction</li>
+            <li>Strategic decision support</li>
+            <li>Restricted Elite environment</li>
+          </ul>
+          <p><strong>Focus:</strong> Decisions, Leverage, Sustained performance</p>
           <a href="https://buy.stripe.com/9B6fZg1Qn8BV8bp4DY9sk04" class="btn" id="elite-cta">Subscribe</a>
-          <div class="note" id="elite-note"></div>
         </div>
       </div>
     </div>
@@ -202,21 +239,7 @@
           "• People who want monetization, not engagement",
           "• Operators tired of public playbooks",
           "• Individuals who move fast and act alone"
-        ],
-        whatTitle: "What you get",
-        whatList: [
-          "• Execution framework used to reach 5M impressions",
-          "• Monetization logic (not theory)",
-          "• Positioning systems for X",
-          "• Private access — no public explanations"
-        ],
-        plans: {
-          basic: "Basic Access",
-          premium: "Premium Access",
-          elite: "Elite Access"
-        },
-        cta: "Subscribe",
-        note: "Access is granted automatically after payment."
+        ]
       },
       pt: {
         title: "Execução acima do ruído.",
@@ -227,25 +250,11 @@
           "• Pessoas que querem monetização, não engagement",
           "• Operadores cansados de playbooks públicos",
           "• Indivíduos que executam rápido e sozinhos"
-        ],
-        whatTitle: "O que recebes",
-        whatList: [
-          "• Framework de execução usado para atingir 5M impressões",
-          "• Lógica real de monetização",
-          "• Sistemas de posicionamento no X",
-          "• Acesso privado — sem explicações públicas"
-        ],
-        plans: {
-          basic: "Acesso Básico",
-          premium: "Acesso Premium",
-          elite: "Acesso Elite"
-        },
-        cta: "Entrar na Primal Sigma",
-        note: "O acesso é concedido automaticamente após o pagamento."
+        ]
       }
     };
 
-    function setLang(lang) {
+    function setLang(lang){
       document.getElementById("btn-en").classList.remove("active");
       document.getElementById("btn-pt").classList.remove("active");
       document.getElementById(`btn-${lang}`).classList.add("active");
@@ -253,17 +262,7 @@
       document.getElementById("title").innerText = content[lang].title;
       document.getElementById("subtitle").innerText = content[lang].subtitle;
       document.getElementById("who-title").innerText = content[lang].whoTitle;
-      document.getElementById("what-title").innerText = content[lang].whatTitle;
-
-      document.getElementById("who-list").innerHTML = content[lang].whoList.map(i => `<li>${i}</li>`).join("");
-      document.getElementById("what-list").innerHTML = content[lang].whatList.map(i => `<li>${i}</li>`).join("");
-
-      document.getElementById("basic-title").innerText = content[lang].plans.basic;
-      document.getElementById("premium-title").innerText = content[lang].plans.premium;
-      document.getElementById("elite-title").innerText = content[lang].plans.elite;
-
-      document.querySelectorAll(".btn").forEach(b => b.innerText = content[lang].cta);
-      document.querySelectorAll(".note").forEach(n => n.innerText = content[lang].note);
+      document.getElementById("who-list").innerHTML = content[lang].whoList.map(i=>`<li>${i}</li>`).join("");
     }
 
     setLang("en");
