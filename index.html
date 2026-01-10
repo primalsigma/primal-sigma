@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Primal Sigma</title>
-
   <style>
     * {
       box-sizing: border-box;
@@ -19,24 +18,10 @@
       display: flex;
       justify-content: center;
       padding: 40px 16px;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    body.pt {
-      background: #808080;
-      color: #000;
-    }
-
-    body.pt p,
-    body.pt li,
-    body.pt h1,
-    body.pt h3,
-    body.pt footer {
-      color: #000;
     }
 
     .container {
-      max-width: 720px;
+      max-width: 1200px;
       width: 100%;
     }
 
@@ -49,7 +34,7 @@
     .lang-btn {
       background: none;
       border: 1px solid #444;
-      color: #ccc;
+      color: #000;
       padding: 6px 12px;
       margin-left: 8px;
       cursor: pointer;
@@ -57,13 +42,9 @@
     }
 
     .lang-btn.active {
-      border-color: #fff;
-      color: #fff;
-    }
-
-    body.pt .lang-btn.active {
       border-color: #000;
       color: #000;
+      font-weight: bold;
     }
 
     h1 {
@@ -74,7 +55,6 @@
 
     p {
       font-size: 18px;
-      color: #cfcfcf;
       margin-bottom: 24px;
       line-height: 1.6;
     }
@@ -84,15 +64,9 @@
     }
 
     .card {
-      border: 1px solid #333;
+      border: 1px solid #000;
       border-radius: 12px;
       padding: 24px;
-      margin-bottom: 24px;
-      background: rgba(0,0,0,0.2);
-    }
-
-    body.pt .card {
-      border-color: #000;
       background: rgba(255,255,255,0.35);
     }
 
@@ -103,15 +77,11 @@
 
     .card ul {
       list-style: none;
+      margin-bottom: 16px;
     }
 
     .card ul li {
       margin-bottom: 10px;
-      color: #dcdcdc;
-    }
-
-    body.pt .card ul li {
-      color: #000;
     }
 
     .price {
@@ -123,42 +93,48 @@
     .btn {
       display: inline-block;
       padding: 14px 22px;
-      background: #ffffff;
-      color: #000;
+      background: #000;
+      color: #fff;
       text-decoration: none;
       font-weight: bold;
       border-radius: 10px;
       margin-top: 8px;
     }
 
-    body.pt .btn {
-      background: #000;
-      color: #fff;
-    }
-
     .note {
       font-size: 14px;
-      color: #999;
       margin-top: 12px;
-    }
-
-    body.pt .note {
-      color: #111;
     }
 
     footer {
       margin-top: 64px;
       text-align: center;
       font-size: 14px;
-      color: #777;
+    }
+
+    /* FLEX BOX PARA PLANOS */
+    .plans-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .plan {
+      flex: 1;
+      min-width: 220px;
+    }
+
+    @media (max-width: 768px) {
+      .plans-container {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
-
 <body>
   <div class="container">
-
-    <!-- Language Switch -->
+    <!-- LANGUAGE SWITCH -->
     <div class="top-bar">
       <button class="lang-btn active" onclick="setLang('en')" id="btn-en">EN</button>
       <button class="lang-btn" onclick="setLang('pt')" id="btn-pt">PT</button>
@@ -183,27 +159,32 @@
       </div>
     </div>
 
-    <!-- PRICING -->
+    <!-- PLANOS -->
     <div class="section">
-      <div class="card">
-        <h3 id="basic-title">Basic Access</h3>
-        <div class="price">€64</div>
-        <a href="https://buy.stripe.com/5kQ5kC3Yv2dxgHVeey9sk03" class="btn" id="basic-cta">Subscribe</a>
-        <div class="note" id="basic-note"></div>
-      </div>
+      <div class="card plans-container">
+        <!-- Basic -->
+        <div class="plan">
+          <h3 id="basic-title">Basic Access</h3>
+          <div class="price">€64</div>
+          <a href="https://buy.stripe.com/5kQ5kC3Yv2dxgHVeey9sk03" class="btn" id="basic-cta">Subscribe</a>
+          <div class="note" id="basic-note"></div>
+        </div>
 
-      <div class="card">
-        <h3 id="premium-title">Premium Access</h3>
-        <div class="price">€149</div>
-        <a href="https://buy.stripe.com/5kQ8wObqX05p1N18Ue9sk02" class="btn" id="premium-cta">Subscribe</a>
-        <div class="note" id="premium-note"></div>
-      </div>
+        <!-- Premium -->
+        <div class="plan">
+          <h3 id="premium-title">Premium Access</h3>
+          <div class="price">€149</div>
+          <a href="https://buy.stripe.com/5kQ8wObqX05p1N18Ue9sk02" class="btn" id="premium-cta">Subscribe</a>
+          <div class="note" id="premium-note"></div>
+        </div>
 
-      <div class="card">
-        <h3 id="elite-title">Elite Access</h3>
-        <div class="price">€349</div>
-        <a href="https://buy.stripe.com/9B6fZg1Qn8BV8bp4DY9sk04" class="btn" id="elite-cta">Subscribe</a>
-        <div class="note" id="elite-note"></div>
+        <!-- Elite -->
+        <div class="plan">
+          <h3 id="elite-title">Elite Access</h3>
+          <div class="price">€349</div>
+          <a href="https://buy.stripe.com/9B6fZg1Qn8BV8bp4DY9sk04" class="btn" id="elite-cta">Subscribe</a>
+          <div class="note" id="elite-note"></div>
+        </div>
       </div>
     </div>
 
@@ -265,8 +246,6 @@
     };
 
     function setLang(lang) {
-      document.body.classList.toggle("pt", lang === "pt");
-
       document.getElementById("btn-en").classList.remove("active");
       document.getElementById("btn-pt").classList.remove("active");
       document.getElementById(`btn-${lang}`).classList.add("active");
@@ -276,11 +255,8 @@
       document.getElementById("who-title").innerText = content[lang].whoTitle;
       document.getElementById("what-title").innerText = content[lang].whatTitle;
 
-      document.getElementById("who-list").innerHTML =
-        content[lang].whoList.map(i => `<li>${i}</li>`).join("");
-
-      document.getElementById("what-list").innerHTML =
-        content[lang].whatList.map(i => `<li>${i}</li>`).join("");
+      document.getElementById("who-list").innerHTML = content[lang].whoList.map(i => `<li>${i}</li>`).join("");
+      document.getElementById("what-list").innerHTML = content[lang].whatList.map(i => `<li>${i}</li>`).join("");
 
       document.getElementById("basic-title").innerText = content[lang].plans.basic;
       document.getElementById("premium-title").innerText = content[lang].plans.premium;
