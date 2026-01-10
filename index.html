@@ -1,231 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Primal Sigma</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <style>
     body {
-      margin: 0;
-      font-family: Inter, Arial, sans-serif;
       background: #808080;
-      color: #000000;
-      line-height: 1.6;
+      color: #ffffff;
+      font-family: Inter, Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
     }
 
     .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 80px 24px;
+      max-width: 720px;
+      padding: 40px;
     }
 
-    h1, h2 {
-      letter-spacing: 1px;
+    .logo {
+      width: 220px;
+      margin-bottom: 32px;
     }
 
     h1 {
-      font-size: 48px;
+      font-size: 42px;
       margin-bottom: 12px;
-    }
-
-    h2 {
-      font-size: 32px;
-      margin-top: 80px;
-      margin-bottom: 16px;
     }
 
     p {
       font-size: 18px;
-      max-width: 700px;
-    }
-
-    ul {
-      margin-top: 16px;
-      margin-bottom: 24px;
-    }
-
-    li {
-      margin-bottom: 8px;
-    }
-
-    .hero p {
-      font-size: 20px;
       opacity: 0.9;
-    }
-
-    .divider {
-      margin: 80px 0;
-      border-bottom: 1px solid #000;
-      opacity: 0.2;
+      margin-bottom: 28px;
     }
 
     .plan {
-      border: 1px solid #000;
-      padding: 32px;
-      margin-top: 40px;
-      max-width: 700px;
+      border: 1px solid #fff;
+      padding: 20px;
+      margin-bottom: 20px;
     }
 
-    .plan h3 {
-      font-size: 26px;
+    .plan h2 {
       margin-bottom: 8px;
+      font-size: 22px;
     }
 
     .price {
-      font-size: 22px;
-      font-weight: 600;
-      margin-top: 16px;
+      font-weight: 700;
+      margin: 12px 0;
     }
 
-    .pay-button {
+    .btn {
       display: inline-block;
-      margin-top: 24px;
-      padding: 14px 32px;
-      border: 2px solid #000;
+      padding: 12px 24px;
+      border: 1px solid #ffffff;
+      color: #ffffff;
       text-decoration: none;
       font-weight: 600;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background: #ffffff;
+      color: #000000;
+    }
+
+    .lang-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .lang-toggle button {
+      background: transparent;
+      border: 1px solid #fff;
+      color: #fff;
+      padding: 6px 10px;
+      margin-left: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .lang-toggle button:hover {
+      background: #fff;
       color: #000;
-      letter-spacing: 1px;
-      transition: all 0.2s ease;
-    }
-
-    .pay-button:hover {
-      background: #000;
-      color: #ffffff;
-    }
-
-    .footer {
-      margin-top: 120px;
-      font-size: 16px;
-      opacity: 0.8;
     }
   </style>
 </head>
 
 <body>
+
+  <!-- Language Toggle -->
+  <div class="lang-toggle">
+    <button onclick="setLanguage('en')">EN</button>
+    <button onclick="setLanguage('pt')">PT</button>
+  </div>
+
   <div class="container">
 
-    <!-- HERO -->
-    <section class="hero">
+    <!-- LOGO -->
+    <img src="assets/logo.png" alt="Primal Sigma Logo" class="logo" />
+
+    <!-- ENGLISH -->
+    <div class="content en">
       <h1>Primal Sigma</h1>
       <p>Execution system for builders and operators.</p>
-    </section>
 
-    <div class="divider"></div>
-
-    <!-- WHAT IT IS -->
-    <section>
-      <h2>What Primal Sigma Is</h2>
-      <p>
-        Primal Sigma is an execution and coordination system built from
-        first-hand application.
-      </p>
-      <p>
-        It is not content, not motivation, and not theory.
-        It is a service layer designed to enforce execution under real conditions.
-      </p>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section>
-      <h2>How It Works</h2>
-      <ul>
-        <li>Clear execution rules</li>
-        <li>Daily structure and accountability</li>
-        <li>Real-time correction</li>
-        <li>Reduced noise and forced alignment</li>
-      </ul>
-      <p>
-        The system is intentionally small to preserve signal,
-        proximity, and execution quality.
-      </p>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- PLANS -->
-    <section>
-      <h2>Plans & Access</h2>
-
-      <!-- BASIC -->
       <div class="plan">
-        <h3>BASIC — SYSTEM ACCESS</h3>
-        <p>For builders starting structured execution</p>
-
-        <ul>
-          <li>Access to the Primal Sigma system</li>
-          <li>Core execution frameworks</li>
-          <li>Community access</li>
-          <li>Monthly follow-up</li>
-        </ul>
-
-        <div class="price">€64 / month</div>
-
-        <a href="https://buy.stripe.com/5kQ5kC3Yv2dxgHVeey9sk03"
-           target="_blank"
-           class="pay-button">
-          Subscribe — Basic
-        </a>
-      </div>
-
-      <!-- PREMIUM -->
-      <div class="plan">
-        <h3>PREMIUM — ADVANCED EXECUTION</h3>
-        <p>For operators increasing output under pressure</p>
-
-        <ul>
-          <li>Everything in Basic</li>
-          <li>Advanced execution rules</li>
-          <li>Weekly planning & alignment</li>
-          <li>Weekly direct feedback</li>
-          <li>Higher accountability standards</li>
-        </ul>
-
+        <h2>PREMIUM — Advanced Execution</h2>
+        <p>For operators increasing output under pressure.</p>
         <div class="price">€149 / month</div>
-
-        <a href="https://buy.stripe.com/5kQ8wObqX05p1N18Ue9sk02"
-           target="_blank"
-           class="pay-button">
-          Subscribe — Premium
+        <a class="btn" href="STRIPE_LINK_PREMIUM" target="_blank">
+          Subscribe
         </a>
       </div>
 
-      <!-- ELITE -->
       <div class="plan">
-        <h3>ELITE — OPERATIONAL EXCELLENCE</h3>
-        <p>For founders and high-level operators</p>
-
-        <ul>
-          <li>Everything in Premium</li>
-          <li>Daily execution oversight</li>
-          <li>Real-time correction</li>
-          <li>Strategic decision support</li>
-          <li>Restricted Elite environment</li>
-        </ul>
-
+        <h2>ELITE — Operational Excellence</h2>
+        <p>For founders and high-level operators.</p>
         <div class="price">€349 / month</div>
-
-        <a href="https://buy.stripe.com/9B6fZg1Qn8BV8bp4DY9sk04"
-           target="_blank"
-           class="pay-button">
-          Subscribe — Elite
+        <a class="btn" href="STRIPE_LINK_ELITE" target="_blank">
+          Apply & Subscribe
         </a>
       </div>
-    </section>
+    </div>
 
-    <div class="divider"></div>
+    <!-- PORTUGUESE -->
+    <div class="content pt" style="display:none;">
+      <h1>Primal Sigma</h1>
+      <p>Sistema de execução para builders e operadores.</p>
 
-    <!-- CLOSING -->
-    <section class="footer">
-      <p>
-        Primal Sigma is not built for everyone.
-        It is built for people who execute.
-      </p>
-    </section>
+      <div class="plan">
+        <h2>PREMIUM — Execução Avançada</h2>
+        <p>Para operadores que aumentam output sob pressão.</p>
+        <div class="price">€149 / mês</div>
+        <a class="btn" href="STRIPE_LINK_PREMIUM" target="_blank">
+          Subscrever
+        </a>
+      </div>
+
+      <div class="plan">
+        <h2>ELITE — Excelência Operacional</h2>
+        <p>Para founders e operadores de alto nível.</p>
+        <div class="price">€349 / mês</div>
+        <a class="btn" href="STRIPE_LINK_ELITE" target="_blank">
+          Candidatar-se
+        </a>
+      </div>
+    </div>
 
   </div>
+
+  <!-- LANGUAGE SCRIPT -->
+  <script>
+    function setLanguage(lang) {
+      document.querySelectorAll('.content').forEach(el => {
+        el.style.display = 'none';
+      });
+      document.querySelector('.' + lang).style.display = 'block';
+      localStorage.setItem('lang', lang);
+    }
+
+    const savedLang = localStorage.getItem('lang');
+    const browserLang = navigator.language.startsWith('pt') ? 'pt' : 'en';
+    setLanguage(savedLang || browserLang);
+  </script>
+
 </body>
 </html>
-
-
