@@ -151,146 +151,22 @@ footer {
 <body>
 <div class="container">
 
-  <!-- LANGUAGE SWITCH -->
-  <div class="top-bar">
-    <button class="lang-btn active" onclick="setLang('en')" id="btn-en">EN</button>
-    <button class="lang-btn" onclick="setLang('pt')" id="btn-pt">PT</button>
-  </div>
-
-  <!-- HERO -->
-  <h1 id="title">Execution over noise.</h1>
-  <p id="subtitle">Primal Sigma is a high-performance execution system for builders who care about results, not opinions.</p>
-
-  <!-- INFO -->
-  <div class="section">
-    <div class="card">
-      <h3 id="who-title">WHAT PRIMAL SIGMA IS</h3>
-      <div id="who-list"></div>
-    </div>
-
-    <div class="card">
-      <h3 id="what-title">HOW IT WORKS</h3>
-      <div id="what-list"></div>
-    </div>
-  </div>
-
-  <!-- PLANOS -->
-  <div class="section">
-    <div class="card plans-container">
-      <!-- Basic -->
-      <div class="plan">
-        <div class="price">€64</div>
-        <p class="plan-description" id="basic-desc">For those building consistency</p>
-        <h3 id="basic-title">Basic Access</h3>
-        <ul>
-          <li>Access to Primal Sigma system & community</li>
-          <li>Basic execution rules across all 5 pillars</li>
-          <li>Daily check‑in structure</li>
-          <li>Monthly review & correction</li>
-        </ul>
-        <p><strong>Focus:</strong> Discipline, Structure, Consistency</p>
-        <a href="https://buy.stripe.com/5kQ5kC3Yv2dxgHVeey9sk03" class="btn" id="basic-cta">Subscribe</a>
-      </div>
-
-      <!-- Premium -->
-      <div class="plan">
-        <div class="price">€149</div>
-        <p class="plan-description" id="premium-desc">For operators increasing output under pressure</p>
-        <h3 id="premium-title">Premium Access</h3>
-        <ul>
-          <li>Everything in Basic</li>
-          <li>Advanced execution rules</li>
-          <li>Weekly planning & alignment</li>
-          <li>Weekly direct feedback</li>
-          <li>Higher accountability standards</li>
-        </ul>
-        <p><strong>Focus:</strong> Output, Focus, Correction</p>
-        <a href="https://buy.stripe.com/5kQ8wObqX05p1N18Ue9sk02" class="btn" id="premium-cta">Subscribe</a>
-      </div>
-
-      <!-- Elite -->
-      <div class="plan">
-        <div class="price">€349</div>
-        <p class="plan-description" id="elite-desc">For founders and high-level operators</p>
-        <h3 id="elite-title">Elite Access</h3>
-        <ul>
-          <li>Everything in Premium</li>
-          <li>Daily execution oversight</li>
-          <li>Real‑time correction</li>
-          <li>Strategic decision support</li>
-          <li>Restricted Elite environment</li>
-        </ul>
-        <p><strong>Focus:</strong> Decisions, Leverage, Sustained performance</p>
-        <a href="https://buy.stripe.com/9B6fZg1Qn8BV8bp4DY9sk04" class="btn" id="elite-cta">Subscribe</a>
-      </div>
-    </div>
-  </div>
-
-  <footer>Primal Sigma®</footer>
+<!-- LANGUAGE SWITCH -->
+<div class="top-bar">
+  <button class="lang-btn active" onclick="setLang('en')" id="btn-en">EN</button>
+  <button class="lang-btn" onclick="setLang('pt')" id="btn-pt">PT</button>
 </div>
 
-<script>
-const content = {
-  en: {
-    title: "Execution over noise.",
-    subtitle: "Primal Sigma is a high-performance execution system for builders who care about results, not opinions.",
-    whoTitle: "WHAT PRIMAL SIGMA IS",
-    whoList: [
-      "<p>Primal Sigma is a <strong>high‑performance execution system</strong> designed for builders, operators, and founders.</p>" +
-      "<p>It operates through:</p>" +
-      "<ul><li>Structure</li><li>Pressure</li><li>Accountability</li><li>Real‑time correction</li></ul>" +
-      "<p>This system was built by applying and refining it on myself first, then evolving it through direct follow‑up with other operators.</p>" +
-      "<p>No theory.<br>Only execution.</p>"
-    ],
-    whatTitle: "HOW IT WORKS",
-    whatList: [
-      "<ol><li>You choose a plan (Basic, Premium, or Elite)</li>" +
-      "<li>You enter a structured execution environment (Discord)</li>" +
-      "<li>You execute daily actions across 5 pillars</li>" +
-      "<li>You report execution</li>" +
-      "<li>You receive correction based on your level</li></ol>" +
-      "<p>This system does not promise results.<br>It creates the conditions for results.</p>"
-    ]
-  },
-  pt: {
-    title: "Execução acima do ruído.",
-    subtitle: "Primal Sigma é um sistema de execução de alta performance para builders que querem resultados, não opiniões.",
-    whoTitle: "O QUE É PRIMAL SIGMA",
-    whoList: [
-      "<p>Primal Sigma é um <strong>sistema de execução de alta performance</strong> projetado para builders, operadores e fundadores.</p>" +
-      "<p>Funciona através de:</p>" +
-      "<ul><li>Estrutura</li><li>Pressão</li><li>Responsabilidade</li><li>Correção em tempo real</li></ul>" +
-      "<p>Este sistema foi desenvolvido aplicando e refinando em mim mesmo primeiro, depois evoluiu através de acompanhamento direto com outros operadores.</p>" +
-      "<p>Sem teoria.<br>Apenas execução.</p>"
-    ],
-    whatTitle: "COMO FUNCIONA",
-    whatList: [
-      "<ol><li>Você escolhe um plano (Básico, Premium ou Elite)</li>" +
-      "<li>Você entra em um ambiente estruturado de execução (Discord)</li>" +
-      "<li>Executa ações diárias em 5 pilares</li>" +
-      "<li>Reporta a execução</li>" +
-      "<li>Recebe correção de acordo com seu nível</li></ol>" +
-      "<p>Este sistema não promete resultados.<br>Cria as condições para resultados.</p>"
-    ]
-  }
-};
+<!-- HERO -->
+<h1 id="title">Execution over noise.</h1>
+<p id="subtitle">Primal Sigma is a high-performance execution system for builders who care about results, not opinions.</p>
 
-function setLang(lang) {
-  document.getElementById("btn-en").classList.remove("active");
-  document.getElementById("btn-pt").classList.remove("active");
-  document.getElementById(`btn-${lang}`).classList.add("active");
+<!-- INFO -->
+<div class="section">
+  <div class="card">
+    <h3 id="who-title">Who this is for</h3>
+    <ul id="who-list"></ul>
+  </div>
 
-  document.getElementById("title").innerText = content[lang].title;
-  document.getElementById("subtitle").innerText = content[lang].subtitle;
-
-  document.getElementById("who-title").innerText = content[lang].whoTitle;
-  document.getElementById("who-list").innerHTML = content[lang].whoList.join("");
-
-  document.getElementById("what-title").innerText = content[lang].whatTitle;
-  document.getElementById("what-list").innerHTML = content[lang].whatList.join("");
-}
-
-setLang("en");
-</script>
-</body>
-</html>
+  <div class="card">
+    <
