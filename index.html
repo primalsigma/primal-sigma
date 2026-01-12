@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Primal Sigma</title>
+
   <style>
     * {
       box-sizing: border-box;
@@ -43,7 +44,6 @@
 
     .lang-btn.active {
       border-color: #000;
-      color: #000;
       font-weight: bold;
     }
 
@@ -55,7 +55,7 @@
 
     p {
       font-size: 18px;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
       line-height: 1.6;
     }
 
@@ -68,26 +68,44 @@
       border-radius: 12px;
       padding: 24px;
       background: rgba(255,255,255,0.35);
+      margin-bottom: 24px;
     }
 
     .card h3 {
-      font-size: 22px;
-      margin-bottom: 12px;
+      font-size: 24px;
+      margin-bottom: 16px;
     }
 
-    .card ul {
+    ul {
       list-style: disc inside;
       margin-bottom: 16px;
     }
 
-    .card ul li {
+    ul li {
       margin-bottom: 6px;
+    }
+
+    .divider {
+      border-top: 1px solid #000;
+      margin: 24px 0;
+    }
+
+    /* PLANS */
+    .plans-container {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .plan {
+      flex: 1;
+      min-width: 260px;
     }
 
     .price {
       font-size: 32px;
       font-weight: bold;
-      margin: 16px 0;
+      margin: 8px 0;
     }
 
     .btn {
@@ -98,11 +116,6 @@
       text-decoration: none;
       font-weight: bold;
       border-radius: 10px;
-      margin-top: 8px;
-    }
-
-    .note {
-      font-size: 14px;
       margin-top: 12px;
     }
 
@@ -112,30 +125,6 @@
       font-size: 14px;
     }
 
-    /* FLEX BOX PARA PLANOS */
-    .plans-container {
-      display: flex;
-      justify-content: space-between;
-      gap: 24px; /* aumenta espaçamento entre as caixas */
-      flex-wrap: wrap;
-    }
-
-    .plan {
-      flex: 1;
-      min-width: 250px;
-    }
-
-    .plan h4 {
-      margin-top: 12px;
-      margin-bottom: 8px;
-      font-size: 18px;
-    }
-
-    .plan p {
-      margin-bottom: 8px;
-      font-size: 16px;
-    }
-
     @media (max-width: 768px) {
       .plans-container {
         flex-direction: column;
@@ -143,126 +132,231 @@
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <!-- LANGUAGE SWITCH -->
-    <div class="top-bar">
-      <button class="lang-btn active" onclick="setLang('en')" id="btn-en">EN</button>
-      <button class="lang-btn" onclick="setLang('pt')" id="btn-pt">PT</button>
-    </div>
+<div class="container">
 
-    <!-- HERO -->
-    <h1 id="title">Execution over noise.</h1>
-    <p id="subtitle">
-      Primal Sigma is a high-performance execution system for builders who care about results, not opinions.
-    </p>
-
-    <!-- INFO -->
-    <div class="section">
-      <div class="card">
-        <h3 id="who-title">Who this is for</h3>
-        <ul id="who-list"></ul>
-      </div>
-
-      <div class="card">
-        <h3 id="what-title">What you get</h3>
-        <ul id="what-list"></ul>
-      </div>
-    </div>
-
-    <!-- PLANOS -->
-    <div class="section">
-      <div class="card plans-container">
-        <!-- Basic -->
-        <div class="plan">
-          <h3 id="basic-title">Basic Access</h3>
-          <p><strong>For those building consistency</strong></p>
-          <div class="price">€64</div>
-          <p><strong>Includes:</strong></p>
-          <ul>
-            <li>Access to Primal Sigma system & community</li>
-            <li>Basic execution rules across all 5 pillars</li>
-            <li>Daily check‑in structure</li>
-            <li>Monthly review & correction</li>
-          </ul>
-          <a href="https://buy.stripe.com/5kQ5kC3Yv2dxgHVeey9sk03" class="btn" id="basic-cta">Subscribe</a>
-        </div>
-
-        <!-- Premium -->
-        <div class="plan">
-          <h3 id="premium-title">Premium Access</h3>
-          <p><strong>For operators increasing output under pressure</strong></p>
-          <div class="price">€149</div>
-          <p><strong>Includes:</strong></p>
-          <ul>
-            <li>Everything in Basic</li>
-            <li>Advanced execution rules</li>
-            <li>Weekly planning & alignment</li>
-            <li>Weekly direct feedback</li>
-            <li>Higher accountability standards</li>
-          </ul>
-          <a href="https://buy.stripe.com/5kQ8wObqX05p1N18Ue9sk02" class="btn" id="premium-cta">Subscribe</a>
-        </div>
-
-        <!-- Elite -->
-        <div class="plan">
-          <h3 id="elite-title">Elite Access</h3>
-          <p><strong>For founders and high‑level operators</strong></p>
-          <div class="price">€349</div>
-          <p><strong>Includes:</strong></p>
-          <ul>
-            <li>Everything in Premium</li>
-            <li>Daily execution oversight</li>
-            <li>Real‑time correction</li>
-            <li>Strategic decision support</li>
-            <li>Restricted Elite environment</li>
-          </ul>
-          <a href="https://buy.stripe.com/9B6fZg1Qn8BV8bp4DY9sk04" class="btn" id="elite-cta">Subscribe</a>
-        </div>
-      </div>
-    </div>
-
-    <footer>Primal Sigma®</footer>
+  <!-- LANGUAGE SWITCH -->
+  <div class="top-bar">
+    <button class="lang-btn active" onclick="setLang('en')" id="btn-en">EN</button>
+    <button class="lang-btn" onclick="setLang('pt')" id="btn-pt">PT</button>
   </div>
 
-  <script>
-    const content = {
-      en: {
-        title: "Execution over noise.",
-        subtitle: "Primal Sigma is a high-performance execution system for builders who care about results, not opinions.",
-        whoTitle: "Who this is for",
-        whoList: [
-          "• Builders focused on execution",
-          "• People who want monetization, not engagement",
-          "• Operators tired of public playbooks",
-          "• Individuals who move fast and act alone"
-        ]
+  <!-- HERO -->
+  <h1 id="title"></h1>
+  <p id="subtitle"></p>
+
+  <!-- INFO SECTION -->
+  <div class="section">
+    <div class="card" id="info-card"></div>
+  </div>
+
+  <!-- PLANS -->
+  <div class="section">
+    <div class="card plans-container">
+
+      <!-- BASIC -->
+      <div class="plan">
+        <h3 id="basic-title"></h3>
+        <div class="price">€64</div>
+        <p id="basic-desc"></p>
+        <ul id="basic-list"></ul>
+        <a href="https://buy.stripe.com/5kQ5kC3Yv2dxgHVeey9sk03" class="btn" id="basic-cta"></a>
+      </div>
+
+      <!-- PREMIUM -->
+      <div class="plan">
+        <h3 id="premium-title"></h3>
+        <div class="price">€149</div>
+        <p id="premium-desc"></p>
+        <ul id="premium-list"></ul>
+        <a href="https://buy.stripe.com/5kQ8wObqX05p1N18Ue9sk02" class="btn" id="premium-cta"></a>
+      </div>
+
+      <!-- ELITE -->
+      <div class="plan">
+        <h3 id="elite-title"></h3>
+        <div class="price">€349</div>
+        <p id="elite-desc"></p>
+        <ul id="elite-list"></ul>
+        <a href="https://buy.stripe.com/9B6fZg1Qn8BV8bp4DY9sk04" class="btn" id="elite-cta"></a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>Primal Sigma®</footer>
+</div>
+
+<script>
+const content = {
+  en: {
+    title: "Execution over noise.",
+    subtitle: "Primal Sigma is a high-performance execution system for builders who care about results, not opinions.",
+
+    info: `
+      <h3>WHAT PRIMAL SIGMA IS</h3>
+      <p>
+        Primal Sigma is a <strong>high performance execution system</strong> designed for builders, operators, and founders.
+      </p>
+      <p>It operates through:</p>
+      <ul>
+        <li>Structure</li>
+        <li>Pressure</li>
+        <li>Accountability</li>
+        <li>Real-time correction</li>
+      </ul>
+      <p>
+        This system was built by applying and refining it on myself first, then evolving it through direct follow-up with other operators.
+      </p>
+
+      <div class="divider"></div>
+
+      <h3>HOW IT WORKS</h3>
+      <ul>
+        <li>You choose a plan (Basic, Premium, or Elite)</li>
+        <li>You enter a structured execution environment (Discord)</li>
+        <li>You execute daily actions across 5 pillars</li>
+        <li>You report execution</li>
+        <li>You receive correction based on your level</li>
+      </ul>
+      <p><strong>This system does not promise results.</strong><br>It creates the conditions for results.</p>
+    `,
+
+    plans: {
+      basic: {
+        title: "Basic Access",
+        desc: "For those building consistency",
+        list: [
+          "Access to Primal Sigma system & community",
+          "Basic execution rules across all 5 pillars",
+          "Daily check-in structure",
+          "Monthly review & correction"
+        ],
+        cta: "Subscribe"
       },
-      pt: {
-        title: "Execução acima do ruído.",
-        subtitle: "Primal Sigma é um sistema de execução de alta performance para builders que querem resultados, não opiniões.",
-        whoTitle: "Para quem é",
-        whoList: [
-          "• Builders focados em execução",
-          "• Pessoas que querem monetização, não engagement",
-          "• Operadores cansados de playbooks públicos",
-          "• Indivíduos que executam rápido e sozinhos"
-        ]
+      premium: {
+        title: "Premium Access",
+        desc: "For operators increasing output under pressure",
+        list: [
+          "Everything in Basic",
+          "Advanced execution rules",
+          "Weekly planning & alignment",
+          "Weekly direct feedback",
+          "Higher accountability standards"
+        ],
+        cta: "Subscribe"
+      },
+      elite: {
+        title: "Elite Access",
+        desc: "For founders and high-level operators",
+        list: [
+          "Everything in Premium",
+          "Daily execution oversight",
+          "Real-time correction",
+          "Strategic decision support",
+          "Restricted Elite environment"
+        ],
+        cta: "Subscribe"
       }
-    };
-
-    function setLang(lang){
-      document.getElementById("btn-en").classList.remove("active");
-      document.getElementById("btn-pt").classList.remove("active");
-      document.getElementById(`btn-${lang}`).classList.add("active");
-
-      document.getElementById("title").innerText = content[lang].title;
-      document.getElementById("subtitle").innerText = content[lang].subtitle;
-      document.getElementById("who-title").innerText = content[lang].whoTitle;
-      document.getElementById("who-list").innerHTML = content[lang].whoList.map(i=>`<li>${i}</li>`).join("");
     }
+  },
 
-    setLang("en");
-  </script>
+  pt: {
+    title: "Execução acima do ruído.",
+    subtitle: "Primal Sigma é um sistema de execução de alta performance para builders que querem resultados, não opiniões.",
+
+    info: `
+      <h3>O QUE É A PRIMAL SIGMA</h3>
+      <p>
+        Primal Sigma é um <strong>sistema de execução de alta performance</strong> criado para builders, operadores e founders.
+      </p>
+      <p>Opera através de:</p>
+      <ul>
+        <li>Estrutura</li>
+        <li>Pressão</li>
+        <li>Responsabilidade</li>
+        <li>Correção em tempo real</li>
+      </ul>
+      <p>
+        Este sistema foi construído aplicando-o primeiro em mim, depois refinado através de acompanhamento direto com outros operadores.
+      </p>
+
+      <div class="divider"></div>
+
+      <h3>COMO FUNCIONA</h3>
+      <ul>
+        <li>Escolhes um plano (Basic, Premium ou Elite)</li>
+        <li>Entras num ambiente estruturado de execução (Discord)</li>
+        <li>Executas ações diárias em 5 pilares</li>
+        <li>Reportas execução</li>
+        <li>Recebes correção conforme o teu nível</li>
+      </ul>
+      <p><strong>Este sistema não promete resultados.</strong><br>Cria as condições para os resultados.</p>
+    `,
+
+    plans: {
+      basic: {
+        title: "Acesso Basic",
+        desc: "Para quem está a construir consistência",
+        list: [
+          "Acesso ao sistema e comunidade Primal Sigma",
+          "Regras básicas de execução nos 5 pilares",
+          "Estrutura de check-in diário",
+          "Revisão e correção mensal"
+        ],
+        cta: "Subscrever"
+      },
+      premium: {
+        title: "Acesso Premium",
+        desc: "Para operadores a aumentar output sob pressão",
+        list: [
+          "Tudo do Basic",
+          "Regras avançadas de execução",
+          "Planeamento e alinhamento semanal",
+          "Feedback direto semanal",
+          "Padrões de responsabilidade mais elevados"
+        ],
+        cta: "Subscrever"
+      },
+      elite: {
+        title: "Acesso Elite",
+        desc: "Para founders e operadores de alto nível",
+        list: [
+          "Tudo do Premium",
+          "Supervisão diária de execução",
+          "Correção em tempo real",
+          "Suporte estratégico em decisões",
+          "Ambiente Elite restrito"
+        ],
+        cta: "Subscrever"
+      }
+    }
+  }
+};
+
+function setLang(lang) {
+  document.getElementById("btn-en").classList.remove("active");
+  document.getElementById("btn-pt").classList.remove("active");
+  document.getElementById(`btn-${lang}`).classList.add("active");
+
+  document.getElementById("title").innerText = content[lang].title;
+  document.getElementById("subtitle").innerText = content[lang].subtitle;
+  document.getElementById("info-card").innerHTML = content[lang].info;
+
+  const plans = content[lang].plans;
+
+  ["basic","premium","elite"].forEach(p => {
+    document.getElementById(`${p}-title`).innerText = plans[p].title;
+    document.getElementById(`${p}-desc`).innerText = plans[p].desc;
+    document.getElementById(`${p}-list`).innerHTML =
+      plans[p].list.map(i => `<li>${i}</li>`).join("");
+    document.getElementById(`${p}-cta`).innerText = plans[p].cta;
+  });
+}
+
+setLang("en");
+</script>
+
 </body>
 </html>
