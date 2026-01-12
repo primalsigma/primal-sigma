@@ -71,11 +71,6 @@
       margin-bottom: 24px;
     }
 
-    .card h3 {
-      font-size: 24px;
-      margin-bottom: 16px;
-    }
-
     ul {
       list-style: disc inside;
       margin-bottom: 16px;
@@ -105,7 +100,7 @@
     .price {
       font-size: 32px;
       font-weight: bold;
-      margin: 8px 0;
+      margin: 16px 0;
     }
 
     .btn {
@@ -146,20 +141,21 @@
   <h1 id="title"></h1>
   <p id="subtitle"></p>
 
-  <!-- INFO SECTION -->
+  <!-- INFO -->
   <div class="section">
     <div class="card" id="info-card"></div>
   </div>
 
-  <!-- PLANS -->
+  <!-- PLANS (UNCHANGED STRUCTURE) -->
   <div class="section">
     <div class="card plans-container">
 
       <!-- BASIC -->
       <div class="plan">
         <h3 id="basic-title"></h3>
-        <div class="price">€64</div>
         <p id="basic-desc"></p>
+        <div class="price">€64</div>
+        <p><strong>Includes:</strong></p>
         <ul id="basic-list"></ul>
         <a href="https://buy.stripe.com/5kQ5kC3Yv2dxgHVeey9sk03" class="btn" id="basic-cta"></a>
       </div>
@@ -167,8 +163,9 @@
       <!-- PREMIUM -->
       <div class="plan">
         <h3 id="premium-title"></h3>
-        <div class="price">€149</div>
         <p id="premium-desc"></p>
+        <div class="price">€149</div>
+        <p><strong>Includes:</strong></p>
         <ul id="premium-list"></ul>
         <a href="https://buy.stripe.com/5kQ8wObqX05p1N18Ue9sk02" class="btn" id="premium-cta"></a>
       </div>
@@ -176,8 +173,9 @@
       <!-- ELITE -->
       <div class="plan">
         <h3 id="elite-title"></h3>
-        <div class="price">€349</div>
         <p id="elite-desc"></p>
+        <div class="price">€349</div>
+        <p><strong>Includes:</strong></p>
         <ul id="elite-list"></ul>
         <a href="https://buy.stripe.com/9B6fZg1Qn8BV8bp4DY9sk04" class="btn" id="elite-cta"></a>
       </div>
@@ -196,9 +194,7 @@ const content = {
 
     info: `
       <h3>WHAT PRIMAL SIGMA IS</h3>
-      <p>
-        Primal Sigma is a <strong>high performance execution system</strong> designed for builders, operators, and founders.
-      </p>
+      <p>Primal Sigma is a <strong>high performance execution system</strong> designed for builders, operators, and founders.</p>
       <p>It operates through:</p>
       <ul>
         <li>Structure</li>
@@ -206,9 +202,7 @@ const content = {
         <li>Accountability</li>
         <li>Real-time correction</li>
       </ul>
-      <p>
-        This system was built by applying and refining it on myself first, then evolving it through direct follow-up with other operators.
-      </p>
+      <p>This system was built by applying and refining it on myself first, then evolving it through direct follow-up with other operators.</p>
 
       <div class="divider"></div>
 
@@ -268,9 +262,7 @@ const content = {
 
     info: `
       <h3>O QUE É A PRIMAL SIGMA</h3>
-      <p>
-        Primal Sigma é um <strong>sistema de execução de alta performance</strong> criado para builders, operadores e founders.
-      </p>
+      <p>Primal Sigma é um <strong>sistema de execução de alta performance</strong> criado para builders, operadores e founders.</p>
       <p>Opera através de:</p>
       <ul>
         <li>Estrutura</li>
@@ -278,9 +270,7 @@ const content = {
         <li>Responsabilidade</li>
         <li>Correção em tempo real</li>
       </ul>
-      <p>
-        Este sistema foi construído aplicando-o primeiro em mim, depois refinado através de acompanhamento direto com outros operadores.
-      </p>
+      <p>Este sistema foi construído aplicando-o primeiro em mim, depois refinado através de acompanhamento direto com outros operadores.</p>
 
       <div class="divider"></div>
 
@@ -344,14 +334,12 @@ function setLang(lang) {
   document.getElementById("subtitle").innerText = content[lang].subtitle;
   document.getElementById("info-card").innerHTML = content[lang].info;
 
-  const plans = content[lang].plans;
-
   ["basic","premium","elite"].forEach(p => {
-    document.getElementById(`${p}-title`).innerText = plans[p].title;
-    document.getElementById(`${p}-desc`).innerText = plans[p].desc;
+    document.getElementById(`${p}-title`).innerText = content[lang].plans[p].title;
+    document.getElementById(`${p}-desc`).innerText = content[lang].plans[p].desc;
     document.getElementById(`${p}-list`).innerHTML =
-      plans[p].list.map(i => `<li>${i}</li>`).join("");
-    document.getElementById(`${p}-cta`).innerText = plans[p].cta;
+      content[lang].plans[p].list.map(i => `<li>${i}</li>`).join("");
+    document.getElementById(`${p}-cta`).innerText = content[lang].plans[p].cta;
   });
 }
 
