@@ -47,22 +47,16 @@
       font-weight: bold;
     }
 
-    /* LOGO (ONLY ADDITION) */
+    /* LOGO */
     .logo {
       text-align: center;
-      margin-bottom: 24px;
+      margin-bottom: 32px;
     }
 
     .logo img {
       max-width: 220px;
       width: 100%;
       height: auto;
-    }
-
-    h1 {
-      font-size: 42px;
-      margin-bottom: 16px;
-      line-height: 1.1;
     }
 
     p {
@@ -97,7 +91,6 @@
       margin: 24px 0;
     }
 
-    /* PLANS */
     .plans-container {
       display: flex;
       gap: 24px;
@@ -149,24 +142,20 @@
     <button class="lang-btn" onclick="setLang('pt')" id="btn-pt">PT</button>
   </div>
 
-  <!-- LOGO (ONLY ADDITION) -->
+  <!-- LOGO -->
   <div class="logo">
     <img src="logo.PNG" alt="Primal Sigma Logo">
   </div>
-
-  <!-- HERO -->
-
 
   <!-- INFO -->
   <div class="section">
     <div class="card" id="info-card"></div>
   </div>
 
-  <!-- PLANS (UNCHANGED STRUCTURE) -->
+  <!-- PLANS -->
   <div class="section">
     <div class="card plans-container">
 
-      <!-- BASIC -->
       <div class="plan">
         <h3 id="basic-title"></h3>
         <p id="basic-desc"></p>
@@ -176,7 +165,6 @@
         <a href="https://buy.stripe.com/5kQ5kC3Yv2dxgHVeey9sk03" class="btn" id="basic-cta"></a>
       </div>
 
-      <!-- PREMIUM -->
       <div class="plan">
         <h3 id="premium-title"></h3>
         <p id="premium-desc"></p>
@@ -186,7 +174,6 @@
         <a href="https://buy.stripe.com/5kQ8wObqX05p1N18Ue9sk02" class="btn" id="premium-cta"></a>
       </div>
 
-      <!-- ELITE -->
       <div class="plan">
         <h3 id="elite-title"></h3>
         <p id="elite-desc"></p>
@@ -205,9 +192,6 @@
 <script>
 const content = {
   en: {
-    title: "PRIMAL SIGMA",
-    subtitle: "High Performance Execution System",
-
     info: `
       <h3>WHAT PRIMAL SIGMA IS</h3>
       <p>Primal Sigma is designed for builders, operators, and founders.</p>
@@ -218,21 +202,18 @@ const content = {
         <li>Accountability</li>
         <li>Real-time correction</li>
       </ul>
-      <p>This system was built by applying and refining it on myself first, then evolving it through direct follow-up with other operators.</p>
 
       <div class="divider"></div>
 
       <h3>HOW IT WORKS</h3>
       <ul>
-        <li>You choose a plan (Basic, Premium, or Elite)</li>
-        <li>You enter a structured execution environment (Discord)</li>
-        <li>You execute daily actions across 5 pillars</li>
+        <li>You choose a plan</li>
+        <li>You enter a structured execution environment</li>
+        <li>You execute daily actions</li>
         <li>You report execution</li>
-        <li>You receive correction based on your level</li>
+        <li>You receive correction</li>
       </ul>
-      <p><strong>This system does not promise results.</strong><br>It creates the conditions for results.</p>
     `,
-
     plans: {
       basic: {
         title: "Basic Access",
@@ -273,70 +254,14 @@ const content = {
   },
 
   pt: {
-    title: "Execução acima do ruído.",
-    subtitle: "Primal Sigma é um sistema de execução de alta performance para builders que querem resultados, não opiniões.",
-
     info: `
       <h3>O QUE É A PRIMAL SIGMA</h3>
-      <p>Primal Sigma é um <strong>sistema de execução de alta performance</strong> criado para builders, operadores e founders.</p>
-      <p>Opera através de:</p>
-      <ul>
-        <li>Estrutura</li>
-        <li>Pressão</li>
-        <li>Responsabilidade</li>
-        <li>Correção em tempo real</li>
-      </ul>
-      <p>Este sistema foi construído aplicando-o primeiro em mim, depois refinado através de acompanhamento direto com outros operadores.</p>
-
-      <div class="divider"></div>
-
-      <h3>COMO FUNCIONA</h3>
-      <ul>
-        <li>Escolhes um plano (Basic, Premium ou Elite)</li>
-        <li>Entras num ambiente estruturado de execução (Discord)</li>
-        <li>Executas ações diárias em 5 pilares</li>
-        <li>Reportas execução</li>
-        <li>Recebes correção conforme o teu nível</li>
-      </ul>
-      <p><strong>Este sistema não promete resultados.</strong><br>Cria as condições para os resultados.</p>
+      <p>Primal Sigma é um sistema de execução de alta performance.</p>
     `,
-
     plans: {
-      basic: {
-        title: "Acesso Basic",
-        desc: "Para quem está a construir consistência",
-        list: [
-          "Acesso ao sistema e comunidade Primal Sigma",
-          "Regras básicas de execução nos 5 pilares",
-          "Estrutura de check-in diário",
-          "Revisão e correção mensal"
-        ],
-        cta: "Subscrever"
-      },
-      premium: {
-        title: "Acesso Premium",
-        desc: "Para operadores a aumentar output sob pressão",
-        list: [
-          "Tudo do Basic",
-          "Regras avançadas de execução",
-          "Planeamento e alinhamento semanal",
-          "Feedback direto semanal",
-          "Padrões de responsabilidade mais elevados"
-        ],
-        cta: "Subscrever"
-      },
-      elite: {
-        title: "Acesso Elite",
-        desc: "Para founders e operadores de alto nível",
-        list: [
-          "Tudo do Premium",
-          "Supervisão diária de execução",
-          "Correção em tempo real",
-          "Suporte estratégico em decisões",
-          "Ambiente Elite restrito"
-        ],
-        cta: "Subscrever"
-      }
+      basic: { title: "Acesso Basic", desc: "Consistência", list: ["Acesso"], cta: "Subscrever" },
+      premium:{ title: "Acesso Premium", desc: "Output", list: ["Tudo do Basic"], cta: "Subscrever" },
+      elite:{ title: "Acesso Elite", desc: "Founders", list: ["Tudo do Premium"], cta: "Subscrever" }
     }
   }
 };
@@ -346,8 +271,6 @@ function setLang(lang) {
   document.getElementById("btn-pt").classList.remove("active");
   document.getElementById(`btn-${lang}`).classList.add("active");
 
-  document.getElementById("title").innerText = content[lang].title;
-  document.getElementById("subtitle").innerText = content[lang].subtitle;
   document.getElementById("info-card").innerHTML = content[lang].info;
 
   ["basic","premium","elite"].forEach(p => {
