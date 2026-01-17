@@ -47,10 +47,16 @@
       font-weight: bold;
     }
 
-    h1 {
-      font-size: 42px;
-      margin-bottom: 16px;
-      line-height: 1.1;
+    /* LOGO */
+    .logo {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .logo img {
+      max-width: 220px;
+      width: 100%;
+      height: auto;
     }
 
     p {
@@ -85,7 +91,6 @@
       margin: 24px 0;
     }
 
-    /* PLANS */
     .plans-container {
       display: flex;
       gap: 24px;
@@ -137,20 +142,20 @@
     <button class="lang-btn" onclick="setLang('pt')" id="btn-pt">PT</button>
   </div>
 
-  <!-- HERO -->
-  <h1 id="title"></h1>
-  <p id="subtitle"></p>
+  <!-- LOGO -->
+  <div class="logo">
+    <img src="logo.PNG" alt="Primal Sigma Logo">
+  </div>
 
   <!-- INFO -->
   <div class="section">
     <div class="card" id="info-card"></div>
   </div>
 
-  <!-- PLANS (UNCHANGED STRUCTURE) -->
+  <!-- PLANS -->
   <div class="section">
     <div class="card plans-container">
 
-      <!-- BASIC -->
       <div class="plan">
         <h3 id="basic-title"></h3>
         <p id="basic-desc"></p>
@@ -160,7 +165,6 @@
         <a href="https://buy.stripe.com/5kQ5kC3Yv2dxgHVeey9sk03" class="btn" id="basic-cta"></a>
       </div>
 
-      <!-- PREMIUM -->
       <div class="plan">
         <h3 id="premium-title"></h3>
         <p id="premium-desc"></p>
@@ -170,7 +174,6 @@
         <a href="https://buy.stripe.com/5kQ8wObqX05p1N18Ue9sk02" class="btn" id="premium-cta"></a>
       </div>
 
-      <!-- ELITE -->
       <div class="plan">
         <h3 id="elite-title"></h3>
         <p id="elite-desc"></p>
@@ -189,9 +192,6 @@
 <script>
 const content = {
   en: {
-    title: "PRIMAL SIGMA",
-    subtitle: "High Performance Execution System",
-
     info: `
       <h3>WHAT PRIMAL SIGMA IS</h3>
       <p>Primal Sigma is designed for builders, operators, and founders.</p>
@@ -202,21 +202,20 @@ const content = {
         <li>Accountability</li>
         <li>Real-time correction</li>
       </ul>
-      <p>This system was built by applying and refining it on myself first, then evolving it through direct follow-up with other operators.</p>
 
       <div class="divider"></div>
 
       <h3>HOW IT WORKS</h3>
       <ul>
-        <li>You choose a plan (Basic, Premium, or Elite)</li>
-        <li>You enter a structured execution environment (Discord)</li>
-        <li>You execute daily actions across 5 pillars</li>
+        <li>You choose a plan</li>
+        <li>You enter a structured execution environment</li>
+        <li>You execute daily actions</li>
         <li>You report execution</li>
-        <li>You receive correction based on your level</li>
+        <li>You receive correction</li>
       </ul>
-      <p><strong>This system does not promise results.</strong><br>It creates the conditions for results.</p>
+      <p><strong>This system does not promise results.</strong><br>
+      It creates the conditions for results.</p>
     `,
-
     plans: {
       basic: {
         title: "Basic Access",
@@ -257,34 +256,30 @@ const content = {
   },
 
   pt: {
-    title: "Execução acima do ruído.",
-    subtitle: "Primal Sigma é um sistema de execução de alta performance para builders que querem resultados, não opiniões.",
-
     info: `
       <h3>O QUE É A PRIMAL SIGMA</h3>
-      <p>Primal Sigma é um <strong>sistema de execução de alta performance</strong> criado para builders, operadores e founders.</p>
-      <p>Opera através de:</p>
+      <p>A Primal Sigma foi criada para builders, operadores e founders.</p>
+      <p>Funciona através de:</p>
       <ul>
         <li>Estrutura</li>
         <li>Pressão</li>
         <li>Responsabilidade</li>
         <li>Correção em tempo real</li>
       </ul>
-      <p>Este sistema foi construído aplicando-o primeiro em mim, depois refinado através de acompanhamento direto com outros operadores.</p>
 
       <div class="divider"></div>
 
       <h3>COMO FUNCIONA</h3>
       <ul>
-        <li>Escolhes um plano (Basic, Premium ou Elite)</li>
-        <li>Entras num ambiente estruturado de execução (Discord)</li>
-        <li>Executas ações diárias em 5 pilares</li>
-        <li>Reportas execução</li>
-        <li>Recebes correção conforme o teu nível</li>
+        <li>Escolhes um plano</li>
+        <li>Entras num ambiente estruturado de execução</li>
+        <li>Executas ações diárias</li>
+        <li>Reportas a execução</li>
+        <li>Recebes correção</li>
       </ul>
-      <p><strong>Este sistema não promete resultados.</strong><br>Cria as condições para os resultados.</p>
+      <p><strong>Este sistema não promete resultados.</strong><br>
+      Cria as condições para que os resultados aconteçam.</p>
     `,
-
     plans: {
       basic: {
         title: "Acesso Basic",
@@ -314,9 +309,9 @@ const content = {
         desc: "Para founders e operadores de alto nível",
         list: [
           "Tudo do Premium",
-          "Supervisão diária de execução",
+          "Supervisão diária da execução",
           "Correção em tempo real",
-          "Suporte estratégico em decisões",
+          "Suporte estratégico na tomada de decisões",
           "Ambiente Elite restrito"
         ],
         cta: "Subscrever"
@@ -330,8 +325,6 @@ function setLang(lang) {
   document.getElementById("btn-pt").classList.remove("active");
   document.getElementById(`btn-${lang}`).classList.add("active");
 
-  document.getElementById("title").innerText = content[lang].title;
-  document.getElementById("subtitle").innerText = content[lang].subtitle;
   document.getElementById("info-card").innerHTML = content[lang].info;
 
   ["basic","premium","elite"].forEach(p => {
@@ -342,6 +335,10 @@ function setLang(lang) {
     document.getElementById(`${p}-cta`).innerText = content[lang].plans[p].cta;
   });
 }
+
+setLang("en");
+</script>
+
 
 setLang("en");
 </script>
