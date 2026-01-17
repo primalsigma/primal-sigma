@@ -29,7 +29,7 @@
     .top-bar {
       display: flex;
       justify-content: flex-end;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
     }
 
     .lang-btn {
@@ -47,10 +47,9 @@
       font-weight: bold;
     }
 
-    /* LOGO */
     .logo {
       text-align: center;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
     }
 
     .logo img {
@@ -144,7 +143,7 @@
 
   <!-- LOGO -->
   <div class="logo">
-    <img src="logo.PNG" alt="Primal Sigma Logo">
+    <img src="logo.png" alt="Primal Sigma Logo">
   </div>
 
   <!-- INFO -->
@@ -195,7 +194,6 @@ const content = {
     info: `
       <h3>WHAT PRIMAL SIGMA IS</h3>
       <p>Primal Sigma is designed for builders, operators, and founders.</p>
-      <p>It operates through:</p>
       <ul>
         <li>Structure</li>
         <li>Pressure</li>
@@ -208,60 +206,59 @@ const content = {
       <h3>HOW IT WORKS</h3>
       <ul>
         <li>You choose a plan</li>
-        <li>You enter a structured execution environment</li>
-        <li>You execute daily actions</li>
+        <li>You execute daily</li>
         <li>You report execution</li>
         <li>You receive correction</li>
       </ul>
+      <p><strong>This system does not promise results.</strong><br>
+      It creates the conditions for results.</p>
     `,
     plans: {
-      basic: {
-        title: "Basic Access",
-        desc: "For those building consistency",
-        list: [
-          "Access to Primal Sigma system & community",
-          "Basic execution rules across all 5 pillars",
-          "Daily check-in structure",
-          "Monthly review & correction"
-        ],
-        cta: "Subscribe"
-      },
-      premium: {
-        title: "Premium Access",
-        desc: "For operators increasing output under pressure",
-        list: [
-          "Everything in Basic",
-          "Advanced execution rules",
-          "Weekly planning & alignment",
-          "Weekly direct feedback",
-          "Higher accountability standards"
-        ],
-        cta: "Subscribe"
-      },
-      elite: {
-        title: "Elite Access",
-        desc: "For founders and high-level operators",
-        list: [
-          "Everything in Premium",
-          "Daily execution oversight",
-          "Real-time correction",
-          "Strategic decision support",
-          "Restricted Elite environment"
-        ],
-        cta: "Subscribe"
-      }
+      basic: { title: "Basic Access", desc: "For those building consistency", list: [
+        "Access to system & community","Daily execution rules","Monthly review"
+      ], cta: "Subscribe" },
+      premium: { title: "Premium Access", desc: "For higher output", list: [
+        "Everything in Basic","Weekly feedback","Higher accountability"
+      ], cta: "Subscribe" },
+      elite: { title: "Elite Access", desc: "For founders", list: [
+        "Everything in Premium","Real-time correction","Strategic support"
+      ], cta: "Subscribe" }
     }
   },
 
   pt: {
     info: `
       <h3>O QUE É A PRIMAL SIGMA</h3>
-      <p>Primal Sigma é um sistema de execução de alta performance.</p>
+      <p>A Primal Sigma foi criada para builders, operadores e founders.</p>
+      <ul>
+        <li>Estrutura</li>
+        <li>Pressão</li>
+        <li>Responsabilidade</li>
+        <li>Correção em tempo real</li>
+      </ul>
+
+      <div class="divider"></div>
+
+      <h3>COMO FUNCIONA</h3>
+      <ul>
+        <li>Escolhes um plano</li>
+        <li>Executas diariamente</li>
+        <li>Reportas execução</li>
+        <li>Recebes correção</li>
+      </ul>
+      <p><strong>Este sistema não promete resultados.</strong><br>
+      Cria as condições para os resultados.</p>
     `,
     plans: {
-      basic: { title: "Acesso Basic", desc: "Consistência", list: ["Acesso"], cta: "Subscrever" },
-      premium:{ title: "Acesso Premium", desc: "Output", list: ["Tudo do Basic"], cta: "Subscrever" },
-      elite:{ title: "Acesso Elite", desc: "Founders", list: ["Tudo do Premium"], cta: "Subscrever" }
+      basic: { title: "Acesso Basic", desc: "Construir consistência", list: [
+        "Acesso ao sistema","Execução diária","Revisão mensal"
+      ], cta: "Subscrever" },
+      premium: { title: "Acesso Premium", desc: "Mais output", list: [
+        "Tudo do Basic","Feedback semanal","Responsabilidade elevada"
+      ], cta: "Subscrever" },
+      elite: { title: "Acesso Elite", desc: "Founders", list: [
+        "Tudo do Premium","Correção em tempo real","Suporte estratégico"
+      ], cta: "Subscrever" }
     }
   }
 };
